@@ -189,28 +189,6 @@ async def admin_free(message: Message, command: CommandObject):
         await message.answer(f"✅ Роль **{role}** снова свободна.")
     else:
         await message.answer("❌ Роль и так свободна.")
-
-async def main():
-    from aiohttp import web
-
-async def handle(request):
-    return web.Response(text="Бот живой!")
-
-async def main():
-    # Запуск мини-сайта для обмана Render
-    app = web.Application()
-    app.router.add_get('/', handle)
-    runner = web.AppRunner(app)
-    await runner.setup()
-    site = web.TCPSite(runner, '0.0.0.0', 10000)
-    await site.start()
-    
-    print("Бот запущен!")
-    await dp.start_polling(bot)
-
-if name == "__main__":
-    import asyncio
-    asyncio.run(main())
     print("Бот запущен!")
     await dp.start_polling(bot)
 
